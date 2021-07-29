@@ -1,56 +1,55 @@
-# CodeIgniter 4 Framework
+Music Metadata Provider
+Processo Seletivo Claro Música Backend
 
-## What is CodeIgniter?
+Introdução
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Este teste tem como objetivo avaliar as habilidades do candidato para o manejo de aplicações Backend e suas atividades corriqueiras: bugfix, novas funcionalidades, melhorias de performance e evolução.
 
-This repository holds the distributable version of the framework,
-including the user guide. It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+A camada de APIs Music Metadata Provider tem como objetivo atuar como wrapper das APIs Last.fm (https://www.last.fm/api) executando chamadas e encapsulando lógicas e melhorias.
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+Avaliação
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+O candidato deverá fazer o download do projeto em URL_DO_PROJETO, instalar e configurar em sua máquina para efetuar os passos necessários para a conclusão do teste.
+
+Em termos técnicos o Music Metadata Provider é uma aplicação PHP 8 que se utiliza do framework Code Igniter v4.1.3.
+
+O candidato deverá usar como base e seguir o padrão já desenvolvido na API album/search e demais classes internas (Models, Dal, Library etc).
+
+Questões
+
+Abaixo seguem as demandas que deverão ser aplicadas nas APIs e em um segundo momento apresentadas para code review com os avaliadores do processo.
+
+Gerar nova API Key junto a Last.fm para configurar no projeto
+API album/search retorna apenas 1 elemento
+Na API album/search validar o parâmetro value para não aceitar input vazio retornando o code HTTP_CODE_PARAM_ERROR em caso de erro
+Na resposta da API album/search o atributo cover está retornando null
+Desenvolver nova API GET chamada artist/details e agregar os Top 10 álbuns do artista na resposta
+Desenvolver nova API GET chamada chart/top onde deverá ser retornado os 5 artistas mais populares juntamente com seu álbum mais popular
+
+Seguem abaixo algumas questões bônus que não são obrigatórias para a entrega na entrega do teste, porém servem como diferencial para o candidato.
+
+Questão bônus básica
+A API album/search não aceita busca por termos com mais uma palavra. Exemplo: Moving Pictures, Hybrid Theory etc. Adaptar a Library e Controller para corrigir esse cenário.
+
+Questão bônus avançada
+Para a API chart/top deverá ser implementado cache de 1h do resultado visando melhorar o tempo de resposta.
+
+Apresentação
+
+O candidato deverá apresentar em call com os avaliadores as soluções aplicadas e também documentar os novos serviços desenvolvidos apresentados seus endpoints e responses.
+
+O candidato deverá efetuar o upload do teste na ferramente Github e enviar por e-mail o link para análise do material produzido.
 
 
-## Important Change with index.php
+Material de Apoio
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Seguem alguns links que ajudarão o candidato na execução do teste:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+https://codeigniter.com/user_guide/index.html
+https://getcomposer.org/
+https://www.last.fm/api
 
-**Please** read the user guide for a better explanation of how CI4 works!
 
-## Repository Management
 
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
 
-## Contributing
-
-We welcome contributions from the community.
-
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
-
-## Server Requirements
-
-PHP version 7.3 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
