@@ -23,7 +23,7 @@ Abaixo seguem as demandas que deverão ser aplicadas nas APIs e em um segundo mo
 * Gerar nova API Key junto a Last.fm para configurar no projeto
 * API album/search retorna apenas 1 elemento
 * Na API album/search validar o parâmetro value para não aceitar input vazio retornando o code HTTP_CODE_PARAM_ERROR em caso de erro
-* Na resposta da API album/search o atributo cover está retornando null
+* Na resposta da API album/search o atributo cover está retornando null. O cover deverá ser a url da imagem em formato large
 * Desenvolver nova API GET chamada artist/details
 * Desenvolver nova API GET chamada chart/top onde deverá ser retornado os 5 artistas mais populares juntamente com seu álbum mais popular
 
@@ -48,8 +48,3 @@ Seguem alguns links que ajudarão o candidato na execução do teste:
 * https://codeigniter.com/user_guide/index.html
 * https://codeigniter4.github.io/userguide/installation/running.html
 * https://www.last.fm/api
-
-
-
-
-
